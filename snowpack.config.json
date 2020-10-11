@@ -1,0 +1,15 @@
+{
+    "devOptions:": {
+        "out ": "dist"
+    },
+    "buildOptions:": {
+        "clean ": true
+    },
+    "mount": {
+        "app": "/"
+    },
+    "proxy": {
+        "/api": "http://127.0.0.1:7071/api"
+    },
+    "plugins": []
+}

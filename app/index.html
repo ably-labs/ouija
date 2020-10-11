@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Ouijably</title>
+	<meta charset="UTF-8">
+	<meta name="Description" content="Your online spirit board, built with Ably.">
+	<link href="https://fonts.googleapis.com/css2?family=Milonga&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css" />
+	<link rel='manifest' href='/manifest.json'>
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+	<link rel="mask-icon" href="assets/icons/safari-pinned-tab.svg" color="#1a1124">
+	<link rel="shortcut icon" href="assets/icons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#603cba">
+	<meta name="msapplication-config" content="assets/icons/browserconfig.xml">
+	<meta name="theme-color" content="#222222">
+
+	<meta property="og:title" content="Ouijably" />
+	<meta property="og:type" content="website" />
+	<meta property="og:description" content="Your online spirit board, built with Ably" />
+	<meta property="og:url" content="https://ouija.ably.dev" />
+	<meta property="og:image" content="https://ouija.ably.dev/assets/fb-og.png" />
+	<meta property="og:image:height" content="630">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:alt" content="A dark grey spirit board with the alphabet and numbers 0 to 9 across it" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="Ouijably" />
+	<meta name="twitter:description" content="Your online spirit board, built with @ablyrealtime" />
+	<meta name="twitter:image" content="https://ouija.ably.dev/assets/tw-og.png" />
+	<script src="/index.js" type="module"></script>
+</head>
+
+<body>
+	<section id="join" class="join hidden">
+		<h1>Join a Seance</h1>
+		<form id="joinForm" class="join-form">
+			<label for="boardName">Enter a board name: </label>
+			<input id="boardName" name="boardName" type="text" />
+			<button id="joinBtn" class="join-button" type="submit">Join board</button>
+		</form>
+		<p class="footer">Built with
+			<a href="https://ably.com" class="link">
+				<span class="ghostA">A</span>
+				<span class="ghostB">b</span>
+				<span class="ghostL">l</span>
+				<span class="ghostY">y</span>
+			</a>
+		</p>
+	</section>
+
+	<div id="activeBoard" class="hidden board-holder">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			viewBox="0 0 1240 768" xml:space="preserve">
+			<polygon data-focus="150.1,319.4" data-item="a" class="holder"
+				points="105.2,288.1 159.4,276.5 195,340.6 111.2,362" />
+			<polygon data-focus="229.9,298.9" data-item="b" class="holder"
+				points="196.8,270.3 210.1,336.3 253.7,329.7 264.3,308.6 251.8,270.2 238.4,263" />
+			<polygon data-focus="309.6,287" data-item="c" class="holder"
+				points="276.8,276.5 283.5,305.1 302.3,324.2 339.6,313.5 329.2,250.7 294.8,254.2" />
+			<polygon data-focus="387.4,280.7" data-item="d" class="holder"
+				points="353.6,248.5 359.1,317.3 418,307 408.6,245.2" />
+			<polygon data-focus="466.8,274" data-item="e" class="holder"
+				points="432.9,243.1 439,311.7 494.3,307 486.7,240" />
+			<polygon data-focus="536.8,270.3" data-item="f" class="holder"
+				points="513.8,240 515.7,304.1 549.4,305.3 566.2,265.3 565.8,239.4" />
+			<polygon data-focus="614.9,271.1" data-item="g" class="holder"
+				points="584,268 589,291.1 599,302.4 639.7,301.6 643.2,273.4 638,239.4 607.2,236.7 589,247.1" />
+			<polygon data-focus="699.5,271.3" data-item="h" class="holder"
+				points="666.9,238.2 664.5,303.6 732.1,305.3 733.5,240" />
+			<polygon data-focus="773.4,273.4" data-item="i" class="holder"
+				points="758.3,239.4 757.3,306.2 786.8,307 789.6,242.2" />
+			<polygon data-focus="841.6,278.8" data-item="j" class="holder"
+				points="830.4,275.6 811.5,285.2 808.7,311.9 858.6,311.7 870.2,245.8 834.8,246.2" />
+			<polygon data-focus="919.5,285.3" data-item="k" class="holder"
+				points="889.7,248.3 880.8,316 949,324.4 952.6,254.6" />
+			<polygon data-focus="1001,296.4" data-item="l" class="holder"
+				points="977.6,260.2 967.7,324.7 1016.7,333.8 1026.4,310.4 1013.5,286.9 1009.8,264.5" />
+			<polygon data-focus="1087.3,314" data-item="m" class="holder"
+				points="1040.5,336.5 1055.1,273.8 1130.8,290.6 1116.8,355.5" />
+			<polygon data-focus="122.7,432.7" data-item="n" class="holder"
+				points="103.1,477 79.7,410.9 144.4,392.2 161.6,458.7" />
+			<polygon data-focus="202.6,415.6" data-item="o" class="holder"
+				points="172.4,425 186.6,450.6 211.5,448.3 233.9,438 230.6,404.5 215.7,382.8 190.6,380.3 172.4,397" />
+			<polygon data-focus="281,399.6" data-item="p" class="holder"
+				points="255.6,440.8 247,372.9 290.2,368.2 307.2,384 303.9,411.6 287.7,435.7" />
+			<polygon data-focus="357.8,395.6" data-item="q" class="holder"
+				points="352,359.7 333.3,368.2 326.1,393.1 335.6,428.1 363.3,431.3 382.4,440.8 394.2,425 382.8,412.7 386.9,383 371,362" />
+			<polygon data-focus="438.5,388.4" data-item="r" class="holder"
+				points="404.4,358.6 408.6,422.8 466.7,420.1 473.7,410.3 468.8,397 457,390.7 463.8,370.9 448.3,354" />
+			<polygon data-focus="518.3,385.1" data-item="s" class="holder"
+				points="514.4,350.5 540.4,352.4 544.2,402.8 535.2,416.7 494.3,417.6 492.3,363.2 501.2,352.4" />
+			<polygon data-focus="594,381.3" data-item="t" class="holder"
+				points="565.1,350.5 565.1,378.9 578.8,406.5 578.8,416.7 608.8,415.7 608.1,404.5 621.3,372.9 621.3,349.6" />
+			<polygon data-focus="675.1,381.3" data-item="u" class="holder"
+				points="645.1,349.6 645.1,399.5 664.4,417.4 683.9,417.6 702.2,399.3 703.4,351.4" />
+			<polygon data-focus="758.3,379.9" data-item="v" class="holder"
+				points="721.5,357.4 748.3,420.5 764,420.5 795.3,360 795.3,354.4 723.5,351.4" />
+			<polygon data-focus="853.6,387.2" data-item="w" class="holder"
+				points="813.4,355.5 811.5,366.3 827.3,422.1 871.1,426.7 896.9,371.7 896.9,362.1" />
+			<polygon data-focus="951.2,398.9" data-item="x" class="holder"
+				points="922.6,366.3 916.7,431.4 977.1,438.5 981.7,372.5" />
+			<polygon data-focus="1033.9,412" data-item="y" class="holder"
+				points="1006.2,376.5 1009.5,442.7 1043.4,450.3 1070.8,396.1 1072.3,387.9" />
+			<polygon data-focus="1115.5,432.5" data-item="z" class="holder"
+				points="1103,394.3 1079.8,448.6 1082.2,459.7 1133.4,472.9 1153.8,415.1" />
+			<polygon data-focus="362,528.3" data-item="0" class="holder"
+				points="362,499.5 345.2,506.3 337.8,525.4 343.6,549 365.5,554.6 384.2,542.5 384.8,514 373.2,503.8" />
+			<polygon data-focus="415.9,527.6" data-item="1" class="holder"
+				points="403.8,500.5 401.5,549.7 405.3,555.3 427.6,554.6 430.3,544.6 424.5,501.6" />
+			<polygon data-focus="469.5,527.5" data-item="2" class="holder"
+				points="450,509.5 459.9,501.6 478.4,501.6 486.7,513.2 488.6,554.6 450,554.6" />
+			<polygon data-focus="526.8,527.8" data-item="3" class="holder"
+				points="506.7,506.8 506.7,546.1 516.5,554 536.4,554 545.3,540.8 543.3,502.8 523,500.5" />
+			<polygon data-focus="588.4,529.7" data-item="4" class="holder"
+				points="586,500.5 562.2,532 574.9,554 603.8,554 608.5,543.4 608.5,526.5 602.3,500.5" />
+			<polygon data-focus="645.8,528.6" data-item="5" class="holder"
+				points="628.1,501.6 628.1,543.4 631.1,550.9 642.4,554.6 655.7,554.6 666.6,540.1 665.1,502.6" />
+			<polygon data-focus="703.7,528.3" data-item="6" class="holder"
+				points="690.3,502.8 683.6,523.2 683.6,542.7 697.7,554.6 712.7,554.6 723.8,543.4 720.6,503.6 713.2,500.4" />
+			<polygon data-focus="762,525.5" data-item="7" class="holder"
+				points="742.9,502.8 781.1,502.6 783.6,507.6 782.1,515.4 773.6,554 751.9,552.8 749.4,524.4 742.9,523.2" />
+			<polygon data-focus="822.1,526.7" data-item="8" class="holder"
+				points="807.8,501.6 821.2,500.5 835.4,502.1 838.7,511.1 842.7,538.8 837.9,550.2 822.1,555.6 804.1,549.1 800.5,533.2 804.9,522.2 802.8,508.5" />
+			<polygon data-focus="882.6,528.4" data-item="9" class="holder"
+				points="864.8,509 875.3,501.6 891.8,501.9 901.1,511.4 904.1,528.1 900.5,544 888.3,553.5 872.6,553.2 864.8,543.9 869.6,533.5 861.2,525.1" />
+			<polygon data-focus="223.9,651.9" data-item="yes" class="holder"
+				points="161.3,629.2 171.4,674.5 281,675.8 286.6,662 282.4,629.2" />
+			<polygon data-focus="621.2,622.8" data-item="goodbye" class="holder"
+				points="441.9,599.7 428.2,612.6 428.2,633.9 443.5,643.7 805.9,643.7 804.1,599.7" />
+			<polygon data-focus="992,653.1" data-item="no" class="holder"
+				points="949,631 951.2,675.3 1030.1,675.8 1034.9,653.1 1024.9,629.2" />
+		</svg>
+
+		<div class="planchette" id="planchette"></div>
+		<div class="animation" id="animation"></div>
+	</div>
+</body>
+
+</html>
