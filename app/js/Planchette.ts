@@ -28,7 +28,7 @@ export class Planchette {
         this.location = location;
         this._root = element;
 
-        this._hitDebugger = new HitDetectionDebugger(this._root.parentElement);
+        // this._hitDebugger = new HitDetectionDebugger(this._root.parentElement);
     }
 
     public centre() {

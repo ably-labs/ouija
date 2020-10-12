@@ -34,7 +34,7 @@ import { Networking } from "./js/Networking";
 
   const audio = new Audio("/audio/dangerousound.ogg");
   audio.volume = 0.03;
-  // audio.play();
+  audio.play();
 
 
   if ('serviceWorker' in navigator) {
