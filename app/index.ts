@@ -1,13 +1,17 @@
 import { SpiritBoard } from "./js/SpiritBoard";
 import { JoinBox } from "./js/JoinBox";
 import { Networking } from "./js/Networking";
+import { AudioManager } from "./js/audio/AudioManager";
+import { ConfigurationRepository } from "./js/ConfigurationRepository";
+import { wait } from "./js/util"
 
 (async function () {
 
+  const settings = new ConfigurationRepository();
   const networking = new Networking();
-  const joinBox = new JoinBox("join");
-  const board = new SpiritBoard("activeBoard", networking);
 
+  const joinBox = new JoinBox("join", settings);
+  const board = new SpiritBoard("activeBoard", networking);
   const boardName = new URLSearchParams(location.search).get('boardName');
 
   if (!boardName) {
@@ -15,6 +19,8 @@ import { Networking } from "./js/Networking";
     joinBox.show();
     return;
   }
+
+  const audioManager = new AudioManager(settings.load());
 
   networking.on("join", () => {
     board.planchette.centre();
@@ -26,16 +32,14 @@ import { Networking } from "./js/Networking";
 
   await networking.connect(boardName);
 
-  board.onReveal((item) => {
+  board.onReveal(async (item) => {
     board.spookyAnimate(item.text);
+    await wait(1_000);
+    audioManager.voiceItem(item);
   });
 
   board.show();
-
-  const audio = new Audio("/audio/dangerousound.ogg");
-  audio.volume = 0.03;
-  audio.play();
-
+  audioManager.playAmbientAudio();
 
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js');

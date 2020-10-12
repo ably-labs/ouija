@@ -1,3 +1,4 @@
+import { ConfigurationRepository } from "../../app/js/ConfigurationRepository";
 import { JoinBox } from "../../app/js/JoinBox";
 
 describe("Join box", () => {
@@ -5,8 +6,10 @@ describe("Join box", () => {
     let doc: HTMLDocument;
     let ele: HTMLElement;
     let sut: JoinBox;
+    let configRepo: ConfigurationRepository;
 
     beforeEach(() => {
+        configRepo = new ConfigurationRepository();
 
         doc = document.implementation.createHTMLDocument("New doc");
         doc.body.innerHTML = `
@@ -21,12 +24,12 @@ describe("Join box", () => {
         `;
 
         ele = doc.getElementById("join");;
-        sut = new JoinBox(ele);
+        sut = new JoinBox(ele, configRepo);
     })
 
     it("constructor does not throw", async () => {
         expect(() => {
-            new JoinBox(ele);
+            new JoinBox(ele, configRepo);
         }).not.toThrow();
     });
 

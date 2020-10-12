@@ -36,9 +36,20 @@
 	<section id="join" class="join hidden">
 		<h1>Join a Seance</h1>
 		<form id="joinForm" class="join-form">
-			<label for="boardName">Enter a board name: </label>
+			<label class="label" for="boardName">Enter a board name: </label>
 			<input id="boardName" name="boardName" type="text" />
+			<label class="music switch">
+				<input id="musicToggle" type="checkbox" class="checkbox">
+				<span class="slider"></span>
+				<span class="switch-text">Music: </span>
+			</label>
+			<label class="speech switch">
+				<input id="speechToggle" type="checkbox" class="checkbox">
+				<span class="slider"></span>
+				<span class="switch-text">Speech: </span>
+			</label>
 			<button id="joinBtn" class="join-button" type="submit">Join board</button>
+
 		</form>
 		<p class="footer">Built with
 			<a href="https://ably.com" class="link">

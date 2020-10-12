@@ -1,6 +1,7 @@
 import { Networking } from "./Networking";
 import { Planchette } from "./Planchette";
 import { Delta, DetectedItem } from "./types";
+import { wait } from "./util";
 
 export type RevealedItemCallback = (item: DetectedItem) => void;
 declare const Gyroscope: any;
@@ -58,10 +59,13 @@ export class SpiritBoard {
         this._revealedItemCallback = onRevealCallback;
     }
 
-    public spookyAnimate(value: string, duration: number = 3_000) {
+    public async spookyAnimate(value: string, duration: number = 3_000) {
         this._animationElement.innerHTML = value;
         this._animationElement.classList.add('animate');
-        setTimeout(() => { this._animationElement.classList.remove('animate'); }, duration);
+
+        await wait(duration);
+
+        this._animationElement.classList.remove('animate');
     }
 
     private render() {
@@ -97,19 +101,18 @@ export class SpiritBoard {
         this._networking.sendBufferedMessage("nudge", { deltaX: event.movementX, deltaY: event.movementY });
     }
 
-    private temporarilyBlockMovement(duration: number) {
+    private async temporarilyBlockMovement(duration: number) {
         this.blockMovement = true;
 
-        setTimeout(() => {
-            this.blockMovement = false;
+        await wait(duration);
 
-            for (let delta of this._blockedMovementBuffer) {
-                this.movePlanchette(delta);
-            }
+        this.blockMovement = false;
 
-            this._blockedMovementBuffer = [];
+        for (let delta of this._blockedMovementBuffer) {
+            this.movePlanchette(delta);
+        }
 
-        }, duration);
+        this._blockedMovementBuffer = [];
     }
 
     private enableGyroscope() {

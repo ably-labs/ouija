@@ -112,7 +112,7 @@ h1::after {
   font-size: 2em;
 }
 
-label {
+.label {
   width: 100%;
   text-align: center;
 }
@@ -303,6 +303,83 @@ svg {
 .offline-text {
   font-size: 1.4em;
 }
+
+
+.music {
+  position: absolute;
+  left: 20%;
+  bottom: 14%;
+}
+
+.speech {
+  position: absolute;
+  right: 20%;
+  bottom: 14%;
+}
+
+.switch-text {
+  position: absolute;
+  width: 100px;
+  top: 2em;
+  font-size: 0.5em;
+}
+
+.switch-text:after {
+  content: "OFF";
+}
+
+.switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  width: 58px;
+  height: 28px;
+  border: 2px solid white;
+  background-color: #000;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.checkbox:checked + .slider {
+  background-color: #ccc;
+}
+
+.checkbox:checked ~ .switch-text:after {
+  content: "ON";
+}
+
+.checkbox:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+.checkbox:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+
 
 @media (max-width: 700px) {
   .join-form {
