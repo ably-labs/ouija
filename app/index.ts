@@ -26,6 +26,10 @@ import { wait } from "./js/util"
     board.planchette.centre();
   });
 
+  networking.on("snap", (message) => {
+    board.planchette.snapTo(message.data);
+  });
+
   networking.on("nudge", (message) => {
     board.movePlanchette({ deltaX: message.data.deltaX, deltaY: message.data.deltaY });
   });

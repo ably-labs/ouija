@@ -36,6 +36,13 @@ export class Planchette {
         this.location.y = 355;
     }
 
+    public snapTo(text: string) {
+        const elements = [...this._root.ownerDocument.getElementsByClassName("holder")];
+        const first = elements.filter(el => el.getAttribute("data-item") === text)[0];
+        const item = this.toDetectedItem(first);
+        this.focusOn(item);
+    }
+
     public move(delta: Delta): void {
         this.location.x += delta.deltaX;
         this.location.y += delta.deltaY;
@@ -70,16 +77,7 @@ export class Planchette {
             return null;
         }
 
-        const first = itemsAtLocation[0];
-        const item = first.getAttribute("data-item");
-
-        const focusParts = first.getAttribute("data-focus").split(',');
-        const detectionPoint = {
-            x: parseInt(focusParts[0]),
-            y: parseInt(focusParts[1])
-        };
-
-        return { text: item, focalPoint: detectionPoint };
+        return this.toDetectedItem(itemsAtLocation[0]);
     }
 
     private snapToBoundaries() {
@@ -134,5 +132,17 @@ export class Planchette {
 
     private fromCss(parent: HTMLElement, property: string): number {
         return parseInt(parent.style[property].replace("px", ""))
+    }
+
+    private toDetectedItem(first: Element) {
+        const item = first.getAttribute("data-item");
+
+        const focusParts = first.getAttribute("data-focus").split(',');
+        const detectionPoint = {
+            x: parseInt(focusParts[0]),
+            y: parseInt(focusParts[1])
+        };
+
+        return { text: item, focalPoint: detectionPoint };
     }
 }
