@@ -39,7 +39,7 @@ So why not build it?! Curiosity never got anyone in trouble before, I'm sure...
 
 # What's in this repo?
 
-The repo is a fully functioning spirit board web application. in this README we'll cover how it works and how to run it both locally and on a production environment.
+The repo is a fully functioning spirit board web application. In this README we'll cover how it works and how to run it both locally and on a production environment.
 
 ## What will you need to run the web app?
 
