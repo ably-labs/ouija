@@ -33,7 +33,7 @@ Thinking about how spirit boards work using the ideomotor phenomenon poses the q
     If the spirit board can make users involuntarily move their hands across a physical planchette,
     can we reproduce this effect with computer mice and gyroscopes?
 
-In principal, the effect should work in exactly the same way, with the users natural desire to "push" the planchette, replaced by their ability to control the digital recreation of one.
+In principle, the effect should work in exactly the same way, with the users natural desire to "push" the planchette, replaced by their ability to control the digital recreation of one.
 
 So why not build it?! Curiosity never got anyone in trouble before, I'm sure...
 
@@ -431,6 +431,7 @@ private enableGyroscope() {
     gyroscope.start();
 }
 ```
+
 NB. Notice the magic number `10` in there - this is because gyro movements are a lot smaller than mouse movements, so we're multiplying the value up to make the values raised from these events a little more similar, you could change this as preferred.
 
 What this means, is any time a user moves their mouse, a `MouseEvent` is raised and a message is sent, and if they're using a device, **sixty messages a second** will be sent for all the gyroscopic movements. That's a lot of messages, at a really high frequency, and we'd probably burn through our Ably message limits if this was all we did here.
