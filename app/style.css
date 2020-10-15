@@ -379,7 +379,9 @@ svg {
   transform: translateX(30px);
 }
 
-
+.forkme {
+  display: none;
+}
 
 @media (max-width: 700px) {
   .join-form {
@@ -412,4 +414,18 @@ svg {
     margin: 0;
     font-size: 2em;
   }
+}
+
+@media (min-width: 1450px) and (min-height: 850px) {
+  .forkme {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 80px;
+    height: 80px;
+    font-size: 0;
+    color: transparent;
+    background: url(assets/github-corner-right.png) bottom right no-repeat;
+  }  
 }
