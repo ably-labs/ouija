@@ -8,19 +8,18 @@ import { wait } from "./js/util"
 (async function () {
 
   const settings = new ConfigurationRepository();
-  const networking = new Networking();
-
-  const joinBox = new JoinBox("join", settings);
-  const board = new SpiritBoard("activeBoard", networking);
   const boardName = new URLSearchParams(location.search).get('boardName');
 
   if (!boardName) {
+    const joinBox = new JoinBox("join", settings);
     joinBox.setBoardName("spoopy-kids");
     joinBox.show();
     return;
   }
 
+  const networking = new Networking();
   const audioManager = new AudioManager(settings.load());
+  const board = new SpiritBoard("activeBoard", networking);
 
   networking.on("join", () => {
     board.planchette.centre();

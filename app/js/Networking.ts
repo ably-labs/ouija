@@ -22,6 +22,7 @@ export class Networking {
 
     async connect(id: string) {
         this._channel = this._ably.channels.get(`spiritboard-${id}`);
+        this._outboundBuffer = [];
         this._channel.publish({ name: "join", data: {} });
 
         await this._channel.subscribe((message: Ably.Types.Message) => {
@@ -48,7 +49,7 @@ export class Networking {
     }
 
     private flushBuffer() {
-        if (this._outboundBuffer.length > 0) {
+        if (this._channel && this._outboundBuffer.length > 0) {
             this._channel.publish({ name: "bulk", data: this._outboundBuffer });
             this._outboundBuffer = [];
         }
