@@ -40,9 +40,9 @@ So why not build it?! Curiosity never got anyone in trouble before, I'm sure...
 
 # Contents
 
-  * [What's in this repo?](#what-s-in-this-repo-)
-    + [What do I need to run the web app?](#what-do-i-need-to-run-the-web-app-)
-      - [What is Ably and why do I need it for this project?](#what-is-ably-and-why-do-i-need-it-for-this-project-)
+  * [What's in this repo?](#whats-in-this-repo)
+    + [What do I need to run the web app?](#what-do-i-need-to-run-the-web-app)
+      - [What is Ably and why do I need it for this project?](what-is-ably-and-why-do-i-need-it-for-this-project)
       - [Ably channels and API keys](#ably-channels-and-api-keys)
     + [Local dev pre-requirements](#local-dev-pre-requirements)
     + [How authentication with Ably works](#how-authentication-with-ably-works)
@@ -56,12 +56,12 @@ So why not build it?! Curiosity never got anyone in trouble before, I'm sure...
     + [Rendering the board](#rendering-the-board)
     + [Watching user input with events and gyros](#watching-user-input-with-events-and-gyros)
     + [Moving the planchette](#moving-the-planchette)
-    + [Detecting letters/numbers](#detecting-letters-numbers)
+    + [Detecting letters/numbers](#detecting-lettersnumbers)
     + [Notifying the users of letter detection](#notifying-the-users-of-letter-detection)
     + [Resolution scaling](#resolution-scaling)
     + [Making the layout responsive](#making-the-layout-responsive)
   * [Technical Notes - Snowpack](#technical-notes---snowpack)
-  * [Does it work?](#does-it-work-)
+  * [Does it work?](#does-it-work)
 
 ## What's in this repo?
 
