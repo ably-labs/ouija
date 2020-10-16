@@ -701,6 +701,9 @@ This example shows a single, expanded `polygon` element so you can clearly see i
 
 By outlining the characters with these hit detection polygons, we ensure that what the users see through the `planchette` is exactly the letter we're detecting, and that it feels responsive. If this feels familiar to you, it's because it's very similar to the way that hit detection works in HTML image maps. *Editor's note: remember the bad old days of giant images and dozens of image maps?!*
 
+If we rendered the polygons with a black fill, they would look like this:
+<img src="https://cdn.glitch.com/c94f1ebe-bd96-4fd9-89b5-f34ea3b02caf%2Fpolygon.png?v=1602841192475" alt="the polygons surrounding the characters on the spirit board">
+
 Let’s review the attributes:
 * The `data-item` attribute tells us what character is contained.
 * The `data-focus` attribute represents the coordinates of the center of the polygon (eyeballed in Adobe illustrator).
@@ -745,7 +748,7 @@ board.onReveal((item) => {
 });
 ```
 
-That’s how notifications are connected. The `onReveal()` function looks like this: 
+That’s how notifications are connected. The `onReveal()` function looks like this:
 
 ```ts
 public onReveal(onRevealCallback: RevealedItemCallback) {
