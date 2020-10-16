@@ -22,6 +22,8 @@ In the spirit (👻) of the Halloween season and keeping things spooky, I've bui
 3. Ask the board a question.
 4. Watch as the answers are revealed.
 
+<img src="https://cdn.glitch.com/c94f1ebe-bd96-4fd9-89b5-f34ea3b02caf%2Ftw-og.png?v=1602841541892" alt="the Ouijably spirit board">
+
 ## How does a spirit board work?
 
 The spirit board takes advantage of the ["ideomotor phenomenon"](https://en.wikipedia.org/wiki/Ideomotor_phenomenon) -  the process whereby a thought or mental image brings about a seemingly "reflexive" or automatic muscular reaction, often of minuscule degree, and potentially outside of the awareness of the subject.
