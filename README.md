@@ -42,7 +42,7 @@ So why not build it?! Curiosity never got anyone in trouble before, I'm sure...
 
   * [What's in this repo?](#whats-in-this-repo)
     + [What do I need to run the web app?](#what-do-i-need-to-run-the-web-app)
-      - [What is Ably and why do I need it for this project?](what-is-ably-and-why-do-i-need-it-for-this-project)
+      - [What is Ably and why do I need it for this project?](#what-is-ably-and-why-do-i-need-it-for-this-project)
       - [Ably channels and API keys](#ably-channels-and-api-keys)
     + [Local dev pre-requirements](#local-dev-pre-requirements)
     + [How authentication with Ably works](#how-authentication-with-ably-works)
