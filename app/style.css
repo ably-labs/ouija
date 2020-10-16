@@ -255,6 +255,7 @@ svg {
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
   transform: translate(-50%, -50%) scale(1) skew(0);
   z-index: 999;
+  user-select: none;
 }
 
 .animate {
