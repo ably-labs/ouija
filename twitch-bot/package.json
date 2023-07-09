@@ -19,9 +19,9 @@
   },
   "homepage": "https://github.com/snakemode/twitch-ouija#readme",
   "dependencies": {
-    "ably": "^1.2.3",
+    "ably": "^1.2.41",
     "dotenv": "^8.2.0",
-    "tmi.js": "^1.5.0",
+    "tmi.js": "^1.8.5",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.3"
   },
